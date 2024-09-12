@@ -1,6 +1,8 @@
-package person;
+package lab.person;
 
-public class Person
+import lab.interfaces.Nameable;
+
+public class Person implements Nameable
 {
     protected String name;
     protected int age;
@@ -15,18 +17,6 @@ public class Person
     {
         this.name = name;
         this.age = age;
-        this.gender = gender;
-    }
-    public void setFirstName(String name)
-    {
-        this.name = name;
-    }
-    public void setAge(int age)
-    {
-        this.age = age;
-    }
-    public void setGender(String gender)
-    {
         this.gender = gender;
     }
     public String getName() {

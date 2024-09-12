@@ -1,36 +1,26 @@
-package main;
+package lab.main;
 
 /*Задание: Построить иерархию объектов.
  Показать использование и понимание принципов инкапсуляции, наследования, полиморфизма.
-  В классах должны быть поля, конструкторы, методы. Обязательным   является переопределение
-   методов класса Object  toString(), equals(), hashCode().
- Использовать абстрактные классы и интерфейсы. Собрать коллекции объектов.
 
  Больница (собрать персонал)
  */
 
-import design.console.Console;
-import design.console.Design;
-import design.console.Developer;
-import design.console.Message;
-import hospital.Hospital;
-import menu.MenuMain;
-import person.MedicalWorker;
-import person.Nurse;
-import print.console.WriterInfo;
+import lab.design.Console;
+import lab.design.Design;
+import lab.design.Developer;
+import lab.design.Message;
+import lab.hospital.Hospital;
+import lab.menu.MenuMain;
+import lab.console.WriterInfo;
 
 public class MainClass {
 
     public static void main(String[] args) {
-
-        objectCreation();
         MenuMain menu = new MenuMain();
         Hospital hospital = new Hospital();
-        hospital.addMedicalWorker(new Nurse("Пушка", 19, "Женский", 950, 10));
-        hospital.addMedicalWorker(new Nurse("Филатова", 39, "Женский", 250, 15));
-        hospital.addMedicalWorker(new Nurse("Любимов", 44, "Мужской", 400, 25));
-        hospital.addMedicalWorker(new Nurse("Атрозенко", 21, "Мужской", 1000, 45));
-        WriterInfo.printAllTribes(hospital.getWorkers());
+        hospital.loadMedicalWorkersFromFile("src/main/java/lab/data/medical.txt");
+        hospital.loadOfficeWorkersFromFile("src/main/java/lab/data/office.txt");
         while (true)
         {
             menu.menuOfMain();
@@ -38,12 +28,12 @@ public class MainClass {
             {
                 case '1':
                     Console.clear();
-                    //WriterInfo.printWardsInTable(Wards.wards);
+                    WriterInfo.printMedical(hospital.getMedicalWorkers());
                     Message.waitForEnter();
                     break;
                 case '2':
                     Console.clear();
-                    //WriterInfo.printWards(Wards.wards);
+                    WriterInfo.printOffice(hospital.getOfficeWorkers());
                     Message.waitForEnter();
                     break;
                 case '3':
@@ -61,9 +51,5 @@ public class MainClass {
                     Message.waitForEnter();
             }
         }
-    }
-    public static void objectCreation()
-    {
-
     }
 }

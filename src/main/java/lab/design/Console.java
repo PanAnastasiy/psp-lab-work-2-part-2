@@ -1,4 +1,4 @@
-package design.console;
+package lab.design;
 
 public class Console
 {

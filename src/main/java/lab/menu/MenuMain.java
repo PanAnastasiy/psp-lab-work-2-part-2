@@ -1,7 +1,7 @@
-package menu;
+package lab.menu;
 
-import design.console.Design;
-import design.console.Message;
+import lab.design.Design;
+import lab.design.Message;
 
 import java.util.Scanner;
 
@@ -10,8 +10,8 @@ public class MenuMain
     public void menuOfMain()
     {
         Message.printMessage("  Список функций, реализуемых в программе :  ", Design.LIGHT_WHITE, Design.BLUE);
-        System.out.println(Design.LIGHT_WHITE + Design.BOLD + "| 1. Вывод информации о персонале больницы.     |" + Design.RESET);
-        System.out.println(Design.LIGHT_WHITE + Design.BOLD + "| 2. Добавление сведений о персонале.           |" + Design.RESET);
+        System.out.println(Design.LIGHT_WHITE + Design.BOLD + "| 1. Вывод информации о медицинском персонале.  |" + Design.RESET);
+        System.out.println(Design.LIGHT_WHITE + Design.BOLD + "| 2. Вывод информации о персонале офиса.        |" + Design.RESET);
         System.out.println(Design.LIGHT_WHITE + Design.BOLD + "| 3. Вывод информации о разработчике.           |" + Design.RESET);
         Message.printMessage("4. Выход из программы.                       ", Design.LIGHT_WHITE, Design.RED);
     }
